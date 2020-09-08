@@ -1,3 +1,15 @@
+''' 6 recursive operations
+    this is a implementation of a natural recursive
+    calculator. that use the operations:
+
+        > == +
+
+    and the condictional statement:
+
+        if
+    
+'''
+
 def incr(a):
     return a + 1
 
@@ -25,13 +37,15 @@ def mult(a, b):
     return adic(a, mult(a, decr(b)))
 
 def div(n, d):
-    if n > d or n == d:
-        return incr(div(subtr(n, d), d))
+    if n > d:
+        if n == d:
+            return incr(div(subtr(n, d), d))
     return 0
 
 def mod(n, d):
-    if n > d or n == d:
-        return mod(subtr(n, d), d)
+    if n > d:
+        if n == d:
+            return mod(subtr(n, d), d)
     return n
  
 def exp(a, b):
